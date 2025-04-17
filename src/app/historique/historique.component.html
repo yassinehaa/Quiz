@@ -1,0 +1,4 @@
+<h2>Quiz History</h2>
+<div *ngFor="let h of history">
+  <p>{{ h.date }} - Score: {{ h.score }}/{{ h.total }} - Category: {{ h.category }} - Difficulty: {{ h.difficulty }}</p>
+</div>

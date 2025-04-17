@@ -1,0 +1,38 @@
+<!-- FORM: Quiz setup -->
+<div *ngIf="!quizStarted">
+  <h2>Start Quiz</h2>
+
+  <label>Category:</label>
+  <select [(ngModel)]="selectedCategory">
+    <option *ngFor="let c of categories" [value]="c.id">{{ c.name }}</option>
+  </select>
+
+  <label>Difficulty:</label>
+  <select [(ngModel)]="selectedDifficulty">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+
+  <button (click)="startQuiz()">Start</button>
+</div>
+
+<!-- QUIZ: Questions display -->
+<div *ngIf="quizStarted && !showResult">
+  <h3>Question {{ currentIndex + 1 }} of {{ questions.length }}</h3>
+
+  <p [innerHTML]="questions[currentIndex]?.question"></p>
+
+  <ul>
+    <li *ngFor="let answer of shuffleAnswers(questions[currentIndex])">
+      <button (click)="checkAnswer(answer)">{{ answer }}</button>
+    </li>
+  </ul>
+</div>
+
+<!-- RESULT: Quiz is finished -->
+<div *ngIf="showResult">
+  <h2>Quiz Finished!</h2>
+  <p>You scored {{ score }} out of {{ questions.length }}</p>
+  <button (click)="restartQuiz()">Restart</button>
+</div>

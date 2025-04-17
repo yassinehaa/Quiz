@@ -18,7 +18,7 @@ export class QuizService {
   constructor(private http: HttpClient) {}
 
   getQuestions(
-    amount: number = 10,
+    amount: number,
     category?: number,
     difficulty?: string,
     type: string = 'multiple'

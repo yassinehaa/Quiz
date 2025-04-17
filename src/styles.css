@@ -1,1 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0d6efd !important;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  flex: 1;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #005cbf;
+  border-color: #005cbf;
+}
+
+.question-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.answer-btn {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.75rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.history-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  flex: 1;
+}
+
+.history-item {
+  transition: transform 0.2s ease;
+}
+
+.history-item:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .quiz-container,
+  .history-container {
+    margin: 1rem;
+    padding: 0 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+}

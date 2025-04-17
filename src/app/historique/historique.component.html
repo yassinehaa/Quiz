@@ -1,4 +1,8 @@
-<h2>Quiz History</h2>
-<div *ngFor="let h of history">
-  <p>{{ h.date }} - Score: {{ h.score }}/{{ h.total }} - Category: {{ h.category }} - Difficulty: {{ h.difficulty }}</p>
+<div class="history-container">
+  <h2 class="mb-4 text-center">Quiz History</h2>
+  <div *ngFor="let h of history" class="card mb-3 history-item">
+    <div class="card-body">
+      <p class="mb-0"><i class="bi bi-calendar-event me-2"></i>{{ h.date }} - Score: {{ h.score }}/{{ h.total }} - Category: {{ h.category }} - Difficulty: {{ h.difficulty }}</p>
+    </div>
+  </div>
 </div>

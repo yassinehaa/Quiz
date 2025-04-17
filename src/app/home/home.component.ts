@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   showResult = false;
   quizStarted = false;
 
-  selectedCategory = 9; // default: General Knowledge
+  selectedCategory = 9;
   selectedDifficulty = 'easy';
 
   categories = [

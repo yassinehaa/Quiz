@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap');
+
+:root {
+  --primary-neon: #00f7ff;
+  --secondary-neon: #ff00ff;
+  --bg-light: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-dark: #1a1a2e;
+  --glow-shadow: 0 0 8px var(--primary-neon), 0 0 16px var(--primary-neon);
+}
+
+.history-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  flex: 1;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.history-container h2 {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--primary-neon);
+  text-shadow: 0 0 4px var(--primary-neon);
+  margin-bottom: 1.5rem;
+}
+
+.history-container .history-item {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-neon);
+  border-radius: 12px;
+  box-shadow: var(--glow-shadow);
+  transition: transform 0.3s ease;
+}
+
+.history-container .history-item:hover {
+  transform: scale(1.02);
+}
+
+.history-container .card-body {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.history-container .btn-danger {
+  background: var(--secondary-neon);
+  border: none;
+  color: var(--text-dark);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+.history-container .btn-danger:hover {
+  background: var(--primary-neon);
+  transform: scale(1.05);
+  box-shadow: var(--glow-shadow);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 4px var(--primary-neon);
+  }
+  50% {
+    box-shadow: 0 0 16px var(--primary-neon);
+  }
+  100% {
+    box-shadow: 0 0 4px var(--primary-neon);
+  }
+}
+
+@media (max-width: 576px) {
+  .history-container {
+    margin: 1rem;
+    padding: 0 1rem;
+  }
+
+  .history-container .history-item {
+    padding: 1rem;
+  }
+
+  .history-container .card-body {
+    font-size: 0.9rem;
+  }
+
+  .history-container .btn-danger {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

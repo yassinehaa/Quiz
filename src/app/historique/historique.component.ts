@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './historique.component.html',
+  styleUrl:'historique.component.ts',
 })
 export class HistoriqueComponent implements OnInit {
   history: any[] = [];

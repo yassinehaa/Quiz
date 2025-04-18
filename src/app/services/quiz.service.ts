@@ -11,9 +11,17 @@ export interface QuizQuestion {
   incorrect_answers: string[];
 }
 
-@Injectable({ providedIn: 'root' })
+export interface Category {
+  id: number;
+  name: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
 export class QuizService {
   private baseUrl = 'https://opentdb.com/api.php';
+  private categoryUrl = 'https://opentdb.com/api_category.php';
 
   constructor(private http: HttpClient) {}
 
@@ -27,5 +35,9 @@ export class QuizService {
     if (category) url += `&category=${category}`;
     if (difficulty) url += `&difficulty=${difficulty}`;
     return this.http.get<{ response_code: number; results: QuizQuestion[] }>(url);
+  }
+
+  getCategories(): Observable<{ trivia_categories: Category[] }> {
+    return this.http.get<{ trivia_categories: Category[] }>(this.categoryUrl);
   }
 }
